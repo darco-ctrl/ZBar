@@ -29,15 +29,28 @@ if(NOT Slint_FOUND)
     FetchContent_MakeAvailable(Slint)
 endif()
 
-add_executable(zbar
-    src/main.cpp
+
+file(GLOB_RECURSE ZBAR_SOURCES CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
 
+add_executable(zbar ${ZBAR_SOURCES})
+target_compile_definitions(zbar PRIVATE
+    ZBAR_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}"
+)
+target_include_directories(zbar PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/src"
+)
+add_custom_target(copy_zbar_configs ALL
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_CURRENT_SOURCE_DIR}/src/configs/defaults"
+        "$<TARGET_FILE_DIR:zbar>/configs/defaults"
+    VERBATIM
+)
+add_dependencies(copy_zbar_configs zbar)
 target_link_libraries(zbar PRIVATE Slint::Slint)
 
-slint_target_sources(zbar
-    src/ui/app-window.slint
-)
+# slint_target_sources()
 
 # Copy required runtime DLLs beside the executable.
 add_custom_command(

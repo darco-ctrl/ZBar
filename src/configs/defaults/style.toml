@@ -1,0 +1,5 @@
+[variables]
+red = "#FF0000"
+
+[primary_bar]
+background_color = "$red"
