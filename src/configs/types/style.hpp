@@ -6,15 +6,23 @@
 #include <string>
 #include <unordered_map>
 
-struct Style {
+struct StyleProperties {
     std::optional<std::string> background_color;
     std::optional<std::string> color;
     std::optional<std::array<uint8_t, 4>> radius;
 };
 
-using StyleMap = std::unordered_map<std::string, Style>;
+struct Style {
+    std::optional<StyleProperties> idle;
+    std::optional<StyleProperties> hover;
+    std::optional<StyleProperties> active;
+};
+
+using StyleMap = std::unordered_map<std::string, StyleProperties>;
 
 struct BarStyle {
     std::string id;
+    Style style; 
+    
     StyleMap styles;
 };

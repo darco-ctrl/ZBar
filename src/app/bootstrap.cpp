@@ -55,7 +55,7 @@ void Bootstrap::create_app_paths() {
     zbar::Path default_configs_directory = get_zbar_directory() / "configs" / "defaults";
     zbar::Path config_directory = home_directory / ".config" / "zbar";
 
-    // crates .config/zbar only if it does not exists already if not does nothing
+    // Creates .config/zbar only if it does not exists already if not does nothing
     std::filesystem::create_directories(config_directory);
     
     zbar::Path bars_jsonc = config_directory / "bars.jsonc";
