@@ -1,10 +1,10 @@
 #pragma once
 
-#include <filesystem>
+#include "core/types.hpp"
 
-struct AppPaths {
-    std::filesystem::path config_directory;
-    std::filesystem::path bars_jsonc;
-    std::filesystem::path settings_jsonc;
-    std::filesystem::path style_toml;
+struct ZBarPaths {
+    zbar::path config_directory;
+    zbar::path bars_jsonc;
+    zbar::path settings_jsonc;
+    zbar::path style_toml;
 };

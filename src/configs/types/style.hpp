@@ -9,7 +9,7 @@
 struct StyleProperties {
     std::optional<std::string> background_color;
     std::optional<std::string> color;
-    std::optional<std::array<uint8_t, 4>> radius;
+    std::optional<std::array<int8_t, 4>> radius;
 };
 
 struct Style {

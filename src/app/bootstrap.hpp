@@ -1,16 +1,16 @@
 #pragma once
 
 #include "app/paths.hpp"
+#include "core/types.hpp"
 
 class Bootstrap {
     public:
         void initialize();
+        ZBarPaths create_zbar_paths();
         
     private:
-        AppPaths paths;
-
-        std::filesystem::path get_zbar_directory();
-        std::filesystem::path get_home_directory();
-        void create_app_paths();
+        zbar::path get_zbar_directory();
+        zbar::path get_home_directory();
+        
         void check_paths();
 };

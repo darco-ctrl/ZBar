@@ -3,5 +3,5 @@
 #include <filesystem>
 
 namespace zbar {
-    using Path = std::filesystem::path;
+    using path = std::filesystem::path;
 }
