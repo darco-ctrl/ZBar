@@ -4,5 +4,6 @@
 
 struct BarConfig {
     std::string id;
-    std::string monitor;
+    std::string position = "top";
+    std::string monitor = "primary";
 };

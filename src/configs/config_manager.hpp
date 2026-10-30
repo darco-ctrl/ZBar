@@ -1,23 +1,24 @@
 #pragma once
 
 #include "app/paths.hpp"
-#include "configs/types/bar.hpp"
-#include "configs/types/style.hpp"
-#include <unordered_map>
+#include "configs/config_parser.hpp"
+#include "core/types.hpp"
+
 class ConfigManager {
     public:
         explicit ConfigManager(ZBarPaths& paths)
-             : paths_(paths) {}
-        
+             :  paths_(paths),
+                config_parser(paths_) {}
+
         void initialize();
 
     private:
         ZBarPaths& paths_;
-        
-        std::unordered_map<std::string, BarConfig> bars_config;
-        std::unordered_map<std::string, BarStyle> bars_style;
 
-        void set_paths(ZBarPaths& paths);
-        void create_bars_config();
-        void create_bars_style();
+        ConfigParser config_parser;
+        zbar::BarConfigMap bars_config;
+        zbar::BarStyleMap bars_style;
+
+        zbar::BarConfigMap create_bars_config();
+        zbar::BarStyleMap create_bars_style();
 };

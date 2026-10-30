@@ -9,8 +9,8 @@ class Bootstrap {
         ZBarPaths create_zbar_paths();
         
     private:
-        zbar::path get_zbar_directory();
-        zbar::path get_home_directory();
+        zbar::Path get_zbar_directory();
+        zbar::Path get_home_directory();
         
         void check_paths();
 };

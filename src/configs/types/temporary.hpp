@@ -13,7 +13,3 @@ using ConfigVariant = std::variant<
 >;
 
 using Variables = std::unordered_map<std::string, ConfigVariant>;
-
-struct ConfigVariables {
-     Variables veriables;
-};

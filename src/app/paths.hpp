@@ -3,8 +3,8 @@
 #include "core/types.hpp"
 
 struct ZBarPaths {
-    zbar::path config_directory;
-    zbar::path bars_jsonc;
-    zbar::path settings_jsonc;
-    zbar::path style_toml;
+    zbar::Path config_directory;
+    zbar::Path bars_jsonc;
+    zbar::Path settings_jsonc;
+    zbar::Path style_toml;
 };
