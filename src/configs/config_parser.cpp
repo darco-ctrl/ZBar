@@ -7,13 +7,16 @@
 #include <sstream>
 #include <string>
 #include "configs/config_parser.hpp"
+#include "configs/types/bar.hpp"
+#include "core/types.hpp"
 
 void ConfigParser::initialize() {
-    create_bars_jsonc_map();
-    std::cout << bars_config_map["primary_bar"]["position"].get<std::string>() << std::endl;;
+
 }
 
-void ConfigParser::create_bars_jsonc_map() {
+BarsProperties ConfigParser::get_bars_properties() {
+    BarsProperties bars_properties;
+    
     std::ifstream file(paths_.bars_jsonc);
     std::stringstream stream;
     stream << file.rdbuf();
@@ -21,8 +24,10 @@ void ConfigParser::create_bars_jsonc_map() {
     std::string buffer = stream.str();
 
     glz::error_ctx error = glz::read_file_jsonc(
-        bars_config_map,
+        bars_properties,
         paths_.bars_jsonc.string(),
         buffer
     );
+
+    return bars_properties;
 }

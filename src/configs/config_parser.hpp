@@ -1,6 +1,7 @@
 #pragma once
 
 #include "app/paths.hpp"
+#include "configs/types/bar.hpp"
 #include "configs/types/temporary.hpp"
 #include <glaze/json/generic_fwd.hpp>
 
@@ -10,11 +11,10 @@ class ConfigParser {
             : paths_(paths) {}
         
         void initialize();
-        void create_bars_jsonc_map();
+        BarsProperties get_bars_properties();
 
     private:
         ZBarPaths& paths_;
-        
-        glz::generic bars_config_map; 
+         
         Variables style_variables;
 };

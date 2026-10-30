@@ -2,6 +2,7 @@
 
 #include "app/paths.hpp"
 #include "configs/config_parser.hpp"
+#include "configs/types/bar.hpp"
 #include "core/types.hpp"
 
 class ConfigManager {
@@ -16,9 +17,9 @@ class ConfigManager {
         ZBarPaths& paths_;
 
         ConfigParser config_parser;
-        zbar::BarConfigMap bars_config;
+        BarsProperties bars_properties;
         zbar::BarStyleMap bars_style;
 
-        zbar::BarConfigMap create_bars_config();
+        BarsProperties create_bars_config();
         zbar::BarStyleMap create_bars_style();
 };
