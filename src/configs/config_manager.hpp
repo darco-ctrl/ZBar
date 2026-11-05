@@ -2,24 +2,17 @@
 
 #include "app/paths.hpp"
 #include "configs/config_parser.hpp"
-#include "configs/types/bar.hpp"
-#include "core/types.hpp"
 
 class ConfigManager {
-    public:
-        explicit ConfigManager(ZBarPaths& paths)
-             :  paths_(paths),
-                config_parser(paths_) {}
+ public:
+  explicit ConfigManager(ZBarPaths& paths) : config_parser(paths) {}
 
-        void initialize();
+  void initialize();
 
-    private:
-        ZBarPaths& paths_;
+  const BarsProperties& bars() const { return config_parser.bars(); }
+  const ConfigValue& settings() const { return config_parser.settings(); }
+  const BarsStyle& style() const { return config_parser.style(); }
 
-        ConfigParser config_parser;
-        BarsProperties bars_properties;
-        zbar::BarStyleMap bars_style;
-
-        BarsProperties create_bars_config();
-        zbar::BarStyleMap create_bars_style();
+ private:
+  ConfigParser config_parser;
 };

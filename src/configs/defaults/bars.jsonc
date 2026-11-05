@@ -1,5 +1,17 @@
 {
-    "primary_bar": {
-        "montior": "primary"
+  "main_top": {
+    "monitor": "primary",
+    "position": "top",
+    "widgets-left": ["home"],
+    "widgets-center": ["clock"],
+    "widgets-right": ["wifi", "volume", "battery", "notifications"],
+    "widgets": {
+      "home": { "type": "home", "label": "Home" },
+      "clock": { "type": "clock", "format": "%a %d %b  %H:%M", "show_date": true },
+      "wifi": { "type": "wifi", "show_name": true, "show_strength": true },
+      "volume": { "type": "volume", "show_percentage": true },
+      "battery": { "type": "battery", "show_percentage": true, "warning_threshold": 20 },
+      "notifications": { "type": "notifications", "show_count": true }
     }
+  }
 }

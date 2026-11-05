@@ -1,0 +1,7 @@
+// Global application settings. Values here are defaults for behavior shared by bars.
+{
+  "animation_enabled": true,
+  "animation_duration_ms": 180,
+  "poll_interval_ms": 1000,
+  "start_hidden": false
+}

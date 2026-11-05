@@ -1,5 +1,113 @@
 [variables]
-red = "#FF0000"
+background = "#171A21"
+surface = "#222733"
+surface_hover = "#303847"
+foreground = "#E6EAF2"
+muted = "#AAB3C2"
+accent = "#7AA2F7"
+radius = [8, 8, 8, 8]
 
-[primary_bar]
-background_color = "$red"
+[main_top.idle]
+background_color = "$background"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.hover]
+background_color = "$surface_hover"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.active]
+background_color = "$surface"
+color = "$accent"
+radius = "$radius"
+
+[main_top.home.idle]
+background_color = "$surface"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.home.hover]
+background_color = "$surface_hover"
+color = "$accent"
+radius = "$radius"
+
+[main_top.home.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
+
+[main_top.clock.idle]
+background_color = "$surface"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.clock.hover]
+background_color = "$surface_hover"
+color = "$accent"
+radius = "$radius"
+
+[main_top.clock.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
+
+[main_top.wifi.idle]
+background_color = "$surface"
+color = "$accent"
+radius = "$radius"
+
+[main_top.wifi.hover]
+background_color = "$surface_hover"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.wifi.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
+
+[main_top.volume.idle]
+background_color = "$surface"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.volume.hover]
+background_color = "$surface_hover"
+color = "$accent"
+radius = "$radius"
+
+[main_top.volume.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
+
+[main_top.battery.idle]
+background_color = "$surface"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.battery.hover]
+background_color = "$surface_hover"
+color = "$accent"
+radius = "$radius"
+
+[main_top.battery.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
+
+[main_top.notifications.idle]
+background_color = "$surface"
+color = "$foreground"
+radius = "$radius"
+
+[main_top.notifications.hover]
+background_color = "$surface_hover"
+color = "$accent"
+radius = "$radius"
+
+[main_top.notifications.active]
+background_color = "$accent"
+color = "$background"
+radius = "$radius"
